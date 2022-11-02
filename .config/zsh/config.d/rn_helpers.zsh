@@ -63,3 +63,12 @@ function ios() {
     yarn run ios
     cd ..
 }
+
+function test() {
+    node ./node_modules/jest/bin/jest.js ./
+}
+
+function testWatch() {
+    node ./node_modules/jest/bin/jest.js --watch ./
+    watchman watch-del-all
+}

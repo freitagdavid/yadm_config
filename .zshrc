@@ -1,4 +1,4 @@
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 for conf in "$HOME/.config/zsh/config.d/"*.zsh; do
 	source "${conf}"
