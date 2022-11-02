@@ -40,10 +40,6 @@ function setupProject() {
     cd ../..
 }
 
-function cleanupWatchman() {
-    watchman watch-del ./
-}
-
 function nukeAndSetup() {
     cleanNode
     nukePods
@@ -71,4 +67,8 @@ function test() {
 function testWatch() {
     node ./node_modules/jest/bin/jest.js --watch ./
     watchman watch-del-all
+}
+
+function pullAndSetup() {
+
 }
