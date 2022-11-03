@@ -2,6 +2,8 @@
 ##                  RN Helpers                  ##
 ##################################################
 
+retvalue=-1
+
 function cleanNode() {
     rm -rf ./node_modules &
     progress -mp $!
@@ -31,6 +33,18 @@ function nukePods() {
     cd ../..
 }
 
+function pi() {
+    cd ./example/ios
+    pod install
+    cd ../..
+}
+
+function piu() {
+    cd ./example/ios
+    pod install --repo-update
+    cd ../..
+}
+
 function setupProject() {
     npm i
     cd example
@@ -48,13 +62,13 @@ function nukeAndSetup() {
     setupProject
 }
 
-function and() {
+function rna() {
     cd example
     yarn run android
     cd ..
 }
 
-function ios() {
+function rni() {
     cd example
     yarn run ios
     cd ..
@@ -69,6 +83,20 @@ function testWatch() {
     watchman watch-del-all
 }
 
-function pullAndSetup() {
+function rnxCleanup() {
+    npx @react-native-community/cli clean
+}
 
+function ycs() {
+    echo "$(du -sm ~/Library/Caches/yarn | cut -f1)M"
+}
+
+function ycc() {
+    max_size=10240
+    size=$(du -sm ~/Library/Caches/yarn | cut -f1)
+    echo "Yarn cache is ${size}M"
+    if (($size > $max_size)); then
+        echo "Clearing cache"
+        yarn cache clean
+    fi
 }
