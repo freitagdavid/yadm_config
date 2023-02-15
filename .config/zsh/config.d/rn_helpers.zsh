@@ -78,6 +78,10 @@ function test() {
     node ./node_modules/jest/bin/jest.js ./
 }
 
+function watchClean() {
+    watchman watch-del-all
+}
+
 function testWatch() {
     node ./node_modules/jest/bin/jest.js --watch ./
     watchman watch-del-all
@@ -98,5 +102,23 @@ function ycc() {
     if (($size > $max_size)); then
         echo "Clearing cache"
         yarn cache clean
+    fi
+}
+
+function npmVersion() {
+    npm view view $1 versions --json
+}
+
+function addFlavor() {
+    if [ -z "$1"]
+        then
+            echo "No argument supplied"
+            exit
+        else
+            echo "Adding $1 to active build flavors"
+            timestamp=$(date +%s)
+            cp ~/.gradle/gradle.properties ~/.gradle/gradle.properties.$timestamp
+            sed "s/\(RNA\.dev\.includedFlavors=\[\)\(.*$\)/\1\'$1\', \2/g" ~/.gradle/gradle.properties > ~/.gradle/gradle.properties.tmp
+            mv ~/.gradle/gradle.properties.tmp ~/.gradle/gradle.properties
     fi
 }

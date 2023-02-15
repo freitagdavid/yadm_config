@@ -8,7 +8,11 @@ unset conf
 zstyle ':omz:update' mode auto # update automatically without asking
 zstyle ':omz:update' frequency 13
 
-plugins=(git asdf)
+plugins=(
+	git 
+	asdf
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,8 +25,12 @@ source $ZSH/oh-my-zsh.sh
 ##                General Helpers               ##
 ##################################################
 
+ASDF_PYTHON_PATCH_URL="https://github.com/python/cpython/commit/8ea6353.patch?full_index=1"
+
+# Import *.zsh includes
 function rld() {
 	source ~/.zshrc
 }
 
-# Import *.zsh includes
+# Import auth tokens and whatnot
+source ~/.secrets
