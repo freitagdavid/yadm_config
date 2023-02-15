@@ -29,3 +29,14 @@ function reMatch {
 function addNpm {
   npm config set -- "//gitlab.com/api/v4/projects/${1}/packages/npm/:_authToken" "${GITLAB_AUTH}"
 }
+
+function ycp {
+  if [ -z "$1"]
+    then
+      echo "No argument supplies"
+      exit
+    else
+      yadm commit -a -m "'$1'"
+      yadm push
+  fi
+}
