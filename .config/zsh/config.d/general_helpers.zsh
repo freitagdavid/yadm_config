@@ -31,7 +31,7 @@ function addNpm {
 }
 
 function ycp {
-  if [ -z "$1"]
+  if [ -z "$1" ]
     then
       echo "No argument supplies"
       exit

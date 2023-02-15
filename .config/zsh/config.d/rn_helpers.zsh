@@ -110,7 +110,7 @@ function npmVersion() {
 }
 
 function addFlavor() {
-    if [ -z "$1"]
+    if [ -z "$1" ]
         then
             echo "No argument supplied"
             exit
