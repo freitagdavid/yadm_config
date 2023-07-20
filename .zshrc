@@ -34,3 +34,6 @@ function rld() {
 
 # Import auth tokens and whatnot
 source ~/.secrets
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
