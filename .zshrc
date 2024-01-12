@@ -9,7 +9,7 @@ zstyle ':omz:update' mode auto # update automatically without asking
 zstyle ':omz:update' frequency 13
 
 plugins=(
-	git 
+	git
 	asdf
 	zsh-autosuggestions
 )
@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 
 ##################################################
 ##                General Helpers               ##
@@ -34,6 +34,6 @@ function rld() {
 
 # Import auth tokens and whatnot
 source ~/.secrets
+. ~/.asdf/plugins/java/set-java-home.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

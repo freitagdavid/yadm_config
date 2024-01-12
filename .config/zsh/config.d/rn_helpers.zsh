@@ -85,18 +85,18 @@ function rni() {
     cd ..
 }
 
-function test() {
-    node ./node_modules/jest/bin/jest.js ./
-}
+# function test() {
+#     node ./node_modules/jest/bin/jest.js ./
+# }
 
 function watchClean() {
     watchman watch-del-all
 }
 
-function testWatch() {
-    node ./node_modules/jest/bin/jest.js --watch ./
-    watchman watch-del-all
-}
+# function testWatch() {
+#     node ./node_modules/jest/bin/jest.js --watch ./
+#     watchman watch-del-all
+# }
 
 function rnxCleanup() {
     npx @react-native-community/cli clean
@@ -141,38 +141,38 @@ function runProject() {
     npm run flavor:$arch -- --flavor $station --env $env
 }
 
-function gitCommit() {
-    year=$(date +%Y)
-    read "sprint?Sprint: "
-    read "ticket?Ticket: "
-    read "message?Message: "
-    git add .
-    echo "Is this commit message correct?"
-    echo "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-    if read -q "reply?y/N: "; then
-        echo "Committing"
-        git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-    else
-        echo "Aborting"
-    fi
-    # git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-}
+# function gitCommit() {
+#     year=$(date +%Y)
+#     read "sprint?Sprint: "
+#     read "ticket?Ticket: "
+#     read "message?Message: "
+#     git add .
+#     echo "Is this commit message correct?"
+#     echo "feature/$year-Sprint$sprint/RNA-$ticket-$message"
+#     if read -q "reply?y/N: "; then
+#         echo "Committing"
+#         git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
+#     else
+#         echo "Aborting"
+#     fi
+#     # git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
+# }
 
-function gitBranch() {
-    year=$(date +%Y)
-    read "sprint?Sprint: "
-    read "ticket?Ticket: "
-    read "message?Message: "
+# function gitBranch() {
+#     year=$(date +%Y)
+#     read "sprint?Sprint: "
+#     read "ticket?Ticket: "
+#     read "message?Message: "
 
-    echo "Is this branch name correct?"
-    echo "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-    if read -q "reply?y/N: "; then
-        echo -e "\nCreating branch"
-        git fetch --all
-        git checkout -b "feature/$year-Sprint$sprint/RNA-$ticket-$message" "origin/develop"
-    else
-        echo -e "\nAborting"
-        return
-    fi
+#     echo "Is this branch name correct?"
+#     echo "feature/$year-Sprint$sprint/RNA-$ticket-$message"
+#     if read -q "reply?y/N: "; then
+#         echo -e "\nCreating branch"
+#         git fetch --all
+#         git checkout -b "feature/$year-Sprint$sprint/RNA-$ticket-$message" "origin/develop"
+#     else
+#         echo -e "\nAborting"
+#         return
+#     fi
 
-}
+# }
