@@ -34,7 +34,7 @@ function setupDeps() {
 }
 
 function nukePods() {
-    cd ./example/ios
+    cd ./ios
     rm -rf ~/Library/Caches/CocoaPods &
     progress -mp $!
     rm -rf Pods &
@@ -43,13 +43,11 @@ function nukePods() {
     progress -mp $!
     pod deintegrate
     pod setup
-    cd ../..
+    cd ..
 }
 
 function pi() {
-    cd ./example/ios
-    pod install
-    cd ../..
+    npx pod-install
 }
 
 function piu() {
