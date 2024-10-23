@@ -139,23 +139,6 @@ function runProject() {
     npm run flavor:$arch -- --flavor $station --env $env
 }
 
-# function gitCommit() {
-#     year=$(date +%Y)
-#     read "sprint?Sprint: "
-#     read "ticket?Ticket: "
-#     read "message?Message: "
-#     git add .
-#     echo "Is this commit message correct?"
-#     echo "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-#     if read -q "reply?y/N: "; then
-#         echo "Committing"
-#         git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-#     else
-#         echo "Aborting"
-#     fi
-#     # git commit -m "feature/$year-Sprint$sprint/RNA-$ticket-$message"
-# }
-
 # function gitBranch() {
 #     year=$(date +%Y)
 #     read "sprint?Sprint: "

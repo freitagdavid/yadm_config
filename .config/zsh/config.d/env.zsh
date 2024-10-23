@@ -21,6 +21,7 @@ export PATH=$GEM_HOME/bin:$PATH
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export RUBY_CONFIGURE_OPTS="--disable-install-doc --with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 # export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 # Set Java Home
